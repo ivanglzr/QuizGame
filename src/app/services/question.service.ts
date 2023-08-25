@@ -5,6 +5,7 @@ import { Question } from "../models/questions";
 @Injectable()
 export class QuestionService{
   public questions: Question[]
+  public correctOptions: number = 0;
 
   constructor() {
     this.questions = [
@@ -86,5 +87,18 @@ export class QuestionService{
       }, 
       "B"),
     ]
+  }
+
+  changeCount(i: boolean){
+    if (i === true) {
+      this.correctOptions++
+    }
+    
+    console.log(this.correctOptions);
+    
+  }
+
+  getCount(){
+    return this.correctOptions
   }
 }

@@ -1,7 +1,15 @@
-<h4 class="question-title">{{question.question}}</h4>
-<p>
-  {{"A. " + question.options.A}} <br>
-  {{"B. " + question.options.B}} <br>
-  {{"C. " + question.options.C}} <br>
+<h4 class="question-title">{{ question.question }}</h4>
+<p class="options-txt">
+  {{ "A. " + question.options.A }} <br />
+  {{ "B. " + question.options.B }} <br />
+  {{ "C. " + question.options.C }} <br />
 </p>
-<input type="text" >
+<input
+  #optionInput
+  list="options"
+  class="option"
+  type="text"
+  name="option"
+  placeholder="Opcion"
+  (change)="getElement(optionInput)"
+/>

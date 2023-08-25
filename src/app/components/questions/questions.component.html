@@ -1,7 +1,19 @@
 <div class="questions">
   <ol class="questions-list">
-    <li class="question-li" *ngFor="let question of questions">
-      <app-question [question]="question"></app-question>
+    <li class="question-li" *ngFor="let question of questions; let i = index">
+      <app-question
+        [correctOption]="question.correct"
+        [question]="question"
+      ></app-question>
     </li>
   </ol>
+
+  <input type="submit" value="Enviar" (click)="checkOptions()" />
+  <p *ngIf="countCorrect">{{ countCorrect }} fueron correctas</p>
+
+  <datalist id="options">
+    <option value="A"></option>
+    <option value="B"></option>
+    <option value="C"></option>
+  </datalist>
 </div>

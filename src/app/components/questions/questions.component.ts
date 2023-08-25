@@ -9,6 +9,7 @@ import { QuestionService } from 'src/app/services/question.service';
 })
 export class QuestionsComponent implements OnInit{
   public questions: Question[];
+  public countCorrect: number;
 
   constructor(
     public _questionService: QuestionService
@@ -18,6 +19,12 @@ export class QuestionsComponent implements OnInit{
 
   ngOnInit() {
     console.log(this.questions);
+    
+  }
+
+  checkOptions(){
+    this.countCorrect = this._questionService.getCount() 
+    console.log(this.countCorrect);
     
   }
 }

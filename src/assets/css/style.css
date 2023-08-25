@@ -47,3 +47,15 @@
 .nav-menu ul li a:hover{
   color: #ccc;
 }
+
+.questions{
+  margin: 30px;
+}
+
+.question-li{
+  margin-bottom: 15px;
+}
+
+.options-txt{
+  margin-bottom: 10px;
+}
